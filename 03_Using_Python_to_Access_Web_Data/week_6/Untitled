@@ -1,0 +1,17 @@
+import urllib
+import json
+
+url = raw_input('Enter url - ')
+print "url entered:", url
+
+input = urllib.urlopen(url).read()
+
+info = json.loads(input)
+
+total = 0
+
+for item in info:
+    print 'Number', item['comment']
+
+#    total = total + int(item.text)
+#print total
